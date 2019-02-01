@@ -1,0 +1,15 @@
+<div>
+  <form #currencyConverterForm="ngForm">
+<input type="number" max="5000000" min="0" name="currencyValue">
+<mat-form-field>
+  <mat-select (selectionChange)="selectCurrency($event)">
+    <mat-option value="cad">USD</mat-option>
+    <mat-option value="usd">CAD</mat-option>
+    <mat-option value="gbr">GBR</mat-option>
+  </mat-select>
+</mat-form-field>
+  </form>
+</div>
+<div *ngIf="showConvertedCurrency">
+  <label>Converted corrency = {{convertedCurrency}}</label>
+</div>
